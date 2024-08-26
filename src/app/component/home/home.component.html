@@ -1,0 +1,305 @@
+<div class="home-container">
+    <mat-toolbar color="primary" class="mat-elevation-z8 toolbar-fixed" [ngClass]="{'toolbar-top':isToolbarAtTop}">
+      <button mat-icon-button [matMenuTriggerFor]="menu" *ngIf="isMobile">
+        <mat-icon>menu</mat-icon>
+      </button>
+      <span>Portfolio</span>
+      <span class="spacer"></span>
+      <button mat-button *ngIf="!isMobile" (click)="scrollTo('home')">About</button>
+      <button mat-button *ngIf="!isMobile" (click)="scrollTo('experience')">Experience</button>
+      <button mat-button *ngIf="!isMobile" (click)="scrollTo('projects')">Projects</button>      
+      <button mat-button *ngIf="!isMobile" (click)="scrollTo('contact')">Contact</button>
+    </mat-toolbar>
+  
+    <mat-menu #menu="matMenu">
+        <button mat-menu-item (click)="scrollTo('home')">About</button>
+        <button mat-menu-item  (click)="scrollTo('experience')">Experience</button>
+        <button mat-menu-item (click)="scrollTo('projects')">Projects</button>        
+        <button mat-menu-item (click)="scrollTo('contact')">Contact</button>
+    </mat-menu>
+  
+    <div class="content">
+        <section id="home" class="about-section" style="gap:3rem" @fadeIn> 
+                <div class="about-image">
+                  <img src="../../../assets/icons/profile_.png" alt="Marimuthu" />
+                </div>                
+                <div class="about-details section__text">
+                  <p class="section__text__p1">Hello, I'm</p>
+                  <h1 class="title">Marimuthu M</h1>
+                  <p class="section__text__p2">.NET Developer</p>
+                  <div class="btn-container">
+                    <button  class="btn btn-color-2"
+                     onclick="window.open('./assets/resume-example.pdf')"
+                    >
+                      Download CV
+                    </button>
+                    <!-- <button  class="btn btn-color-1" onclick="location.href='./#contact'">
+                      Contact Info
+                    </button> -->
+                  </div>
+                  <div id="socials-container">
+                    <img
+                      src="../../../assets/icons/linkedin.png"
+                      alt="My LinkedIn profile"
+                      class="icon"
+                      onclick="location.href='https://linkedin.com/'"
+                    />
+                    <img
+                      src="../../../assets/icons/github.png"
+                      alt="My Github profile"
+                      class="icon"
+                      onclick="location.href='https://github.com/'"
+                    />
+                  </div>
+                </div>
+                    
+        </section>
+        <section id="about" class="about-section" @fadeIn>  
+          <h3 class="title">About Me</h3>
+          <div class="section-container">             
+              <div class="about-containers">
+                <div class="details-container">
+                  <img
+                    src="../../../assets/icons/experience.png"
+                    alt="Experience icon"
+                    class="icon"
+                  />
+                  <h2 style="font-weight: bold;">Experience</h2>
+                  <p>2+ years <br />Fullstack Development</p>
+                </div>
+                <div class="details-container">
+                  <img
+                    src="../../../assets/icons/education.png"
+                    alt="Education icon"
+                    class="icon"
+                  />
+                  <h2 style="font-weight: bold;">Education</h2>
+                  <p>B.E Bachelors Degree</p>
+                </div>
+              </div>
+              <div class="text-container">
+                <p>
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic quis
+                  reprehenderit et laborum, rem, dolore eum quod voluptate
+                  exercitationem nobis, nihil esse debitis maxime facere minus sint
+                  delectus velit in eos quo officiis explicabo deleniti dignissimos.
+                  Eligendi illum libero dolorum cum laboriosam corrupti quidem,
+                  reiciendis ea magnam? Nulla, impedit fuga!
+                </p>
+              </div>           
+          </div>          
+        </section>
+        <section id="experience" class="about-section" @fadeIn>
+          <h1 class="title">Experience</h1>
+          <div class="experience-details-container">
+            <div class="about-containers">
+              <div class="details-container">
+                <h2 class="experience-sub-title">Frontend Technologies</h2>
+                <div class="article-container">
+                  <article>
+                    <img
+                      src="../../../assets/icons/html.png"
+                      alt="Experience icon"
+                      class="icon"
+                    />
+                    <div>
+                      <h3>HTML</h3>                      
+                    </div>
+                  </article>
+                  <article>
+                    <img
+                      src="../../../assets/icons/css.png"
+                      alt="Experience icon"
+                      class="icon"
+                    />
+                    <div>
+                      <h3>CSS</h3>
+                    </div>
+                  </article>
+                  <article>
+                    <img
+                    src="../../../assets/icons/javascript.png"
+                      alt="Experience icon"
+                      class="icon"
+                    />
+                    <div>
+                      <h3>JavaScript</h3>
+                    </div>
+                  </article>
+                  <article>
+                    <img
+                    src="../../../assets/icons/jquery.png"
+                      alt="Experience icon"
+                      class="icon"
+                    />
+                    <div>
+                      <h3>jQuery</h3>
+                    </div>
+                  </article>
+                                   <article>
+                    <img
+                    src="../../../assets/icons/angular.png"
+                      alt="Experience icon"
+                      class="icon"
+                    />
+                    <div>
+                      <h3>Angular</h3>
+                    </div>
+                  </article>
+                  </div>
+              </div>
+              <div class="details-container">
+                <h2 class="experience-sub-title">Backend Technologies</h2>
+                <div class="article-container">
+                  <article>
+                    <img
+                    src="../../../assets/icons/csharp.png"
+                      alt="Experience icon"
+                      class="icon"
+                    />
+                    <div>
+                      <h3>C#</h3>
+                    </div>
+                  </article>
+                  <article>
+                    <img
+                    src="../../../assets/icons/dotnet.png"
+                      alt="Experience icon"
+                      class="icon"
+                    />
+                    <div>
+                      <h3>ASP.NET</h3>
+                    </div>
+                  </article>
+                  <article>
+                    <img
+                    src="../../../assets/icons/dotnet.png"
+                      alt="Experience icon"
+                      class="icon"
+                    />
+                    <div>
+                      <h3>MVC</h3>
+                    </div>
+                  </article>
+                   <article>
+                    <img
+                    src="../../../assets/icons/sqlserver.png"
+                      alt="Experience icon"
+                      class="icon"
+                    />
+                    <div>
+                      <h3>MS SQL</h3>
+                    </div>
+                  </article>
+                  <article>
+                    <img
+                    src="../../../assets/icons/github.png"
+                      alt="Experience icon"
+                      class="icon"
+                    />
+                    <div>
+                      <h3>Git</h3>
+                    </div>
+                  </article>
+                </div>
+              </div>
+            </div>
+          </div>
+          <img
+            src="../../../assets/icons/arrow.png"
+            alt="Arrow icon"
+            class="icon arrow"
+            onclick="location.href='./#projects'"
+          />
+        </section>           
+    
+        <section id="projects" class="projects-section" @fadeIn>
+          <h1 class="title">Projects</h1>
+          <div class="experience-details-container" style="margin-top: 2rem;">
+            <div class="about-containers">
+              <div class="details-container color-container">
+                <p>Online building plan engine</p>
+                <div class="article-container">
+                  <img
+                    src="../../../assets/icons/house.png"
+                    alt="Project 1"
+                    class="project-img"
+                  />
+                </div>
+                <h2 class="experience-sub-title project-title">House Planner</h2>
+                <div class="btn-container">
+                  <!-- <button
+                    class="btn btn-color-2 project-btn"
+                    onclick="location.href='https://github.com/'"
+                  >
+                    Github
+                  </button> -->
+                  <button
+                    class="btn btn-color-2 project-btn"
+                    onclick="location.href='https://bplancheck.com/'"
+                  >
+                    Live Demo
+                  </button>
+                </div>
+              </div>
+              <div class="details-container color-container">
+                <p>Online building Plan approval system</p>
+                <div class="article-container">
+                  <img
+                    src="../../../assets/icons/building-plan.png"
+                    alt="Project 2"
+                    class="project-img"
+                  />
+                </div>
+                <h2 class="experience-sub-title project-title">OBPAS</h2>
+                <div class="btn-container">
+                  <!-- <button
+                    class="btn btn-color-2 project-btn"
+                    onclick="location.href='https://github.com/'"
+                  >
+                    Github
+                  </button> -->
+                  <button
+                    class="btn btn-color-2 project-btn"
+                    onclick="location.href='https://pbmc-obpas.com/'"
+                  >
+                    Live Demo
+                  </button>
+                </div>
+              </div>              
+            </div>
+          </div>
+          <img
+            src="../../../assets/icons/arrow.png"
+            alt="Arrow icon"
+            class="icon arrow"
+            onclick="location.href='./#contact'"
+          />
+        </section>
+        <section id="contact">
+          <h1 class="title">Contact Me</h1>
+          <div class="contact-info-upper-container">
+            <div class="contact-info-container">
+              <img
+                src="../../../assets/icons/gmail.png"
+                alt="Email icon"
+                class="icon contact-icon email-icon"
+              />
+              <p><a href="mailto:mmarimuthu1997@gmail.com">mmarimuthu1997&#64;Gmail</a></p>
+            </div>
+            <div class="contact-info-container">
+              <img
+                src="../../../assets/icons/linkedin.png"
+                alt="LinkedIn icon"
+                class="icon contact-icon"
+              />
+              <p><a href="https://www.linkedin.com/in/marimuthu-m1997">LinkedIn</a></p>
+            </div>
+          </div>
+        </section>
+        <footer>
+          <p>Copyright &#169;2024. All Rights Reserved.</p>
+        </footer>
+      </div>
+</div>
+  
