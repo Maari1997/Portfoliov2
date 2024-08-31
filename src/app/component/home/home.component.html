@@ -1,7 +1,7 @@
 <div class="home-container">
     <mat-toolbar color="primary" class="mat-elevation-z8 toolbar-fixed" [ngClass]="{'toolbar-top':isToolbarAtTop}">
-      <button mat-icon-button [matMenuTriggerFor]="menu" *ngIf="isMobile">
-        <mat-icon>menu</mat-icon>
+      <button mat-icon-button [matMenuTriggerFor]="menu" *ngIf="isMobile" (click)="toggleMenu()">
+        <mat-icon>{{ menuOpen ? 'close' : 'menu' }}</mat-icon>
       </button>
       <span>Portfolio</span>
       <span class="spacer"></span>
@@ -21,7 +21,7 @@
     <div class="content">
         <section id="home" class="about-section" style="gap:3rem" @fadeIn> 
                 <div class="about-image">
-                  <img src="../../../assets/icons/profile_.png" alt="Marimuthu" />
+                  <img src="/assets/icons/profile_.png" alt="Marimuthu" />
                 </div>                
                 <div class="about-details section__text">
                   <p class="section__text__p1">Hello, I'm</p>
@@ -29,7 +29,7 @@
                   <p class="section__text__p2">.NET Developer</p>
                   <div class="btn-container">
                     <button  class="btn btn-color-2"
-                     onclick="window.open('./assets/resume-example.pdf')"
+                    onclick="window.open('/assets/icons/RESUME.pdf', '_blank')"
                     >
                       Download CV
                     </button>
@@ -38,19 +38,22 @@
                     </button> -->
                   </div>
                   <div id="socials-container">
-                    <img
-                      src="../../../assets/icons/linkedin.png"
-                      alt="My LinkedIn profile"
-                      class="icon"
-                      onclick="location.href='https://linkedin.com/'"
-                    />
-                    <img
-                      src="../../../assets/icons/github.png"
-                      alt="My Github profile"
-                      class="icon"
-                      onclick="location.href='https://github.com/'"
-                    />
+                    <a href="https://www.linkedin.com/in/mmarimuthu1997/" target="_blank">
+                      <img
+                        src="/assets/icons/linkedin.png"
+                        alt="My LinkedIn profile"
+                        class="icon"
+                      />
+                    </a>
+                    <a href="https://github.com/Maari1997/" target="_blank">
+                      <img
+                        src="/assets/icons/github.png"
+                        alt="My GitHub profile"
+                        class="icon"
+                      />
+                    </a>
                   </div>
+                  
                 </div>
                     
         </section>
@@ -60,7 +63,7 @@
               <div class="about-containers">
                 <div class="details-container">
                   <img
-                    src="../../../assets/icons/experience.png"
+                    src="/assets/icons/experience.png"
                     alt="Experience icon"
                     class="icon"
                   />
@@ -69,7 +72,7 @@
                 </div>
                 <div class="details-container">
                   <img
-                    src="../../../assets/icons/education.png"
+                    src="/assets/icons/education.png"
                     alt="Education icon"
                     class="icon"
                   />
@@ -79,12 +82,7 @@
               </div>
               <div class="text-container">
                 <p>
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic quis
-                  reprehenderit et laborum, rem, dolore eum quod voluptate
-                  exercitationem nobis, nihil esse debitis maxime facere minus sint
-                  delectus velit in eos quo officiis explicabo deleniti dignissimos.
-                  Eligendi illum libero dolorum cum laboriosam corrupti quidem,
-                  reiciendis ea magnam? Nulla, impedit fuga!
+                  I am a dedicated software developer with a focus on front-end development using Angular and full-stack development with ASP.NET. My passion lies in impactful applications. With a strong foundation in coding best practices and a keen eye for design. I am committed to continuous learning and am always exploring new technologies to stay ahead in the ever-evolving tech landscape. My goal is to create innovative solutions that meet the needs of users expectations.
                 </p>
               </div>           
           </div>          
@@ -108,7 +106,7 @@
                   </article>
                   <article>
                     <img
-                      src="../../../assets/icons/css.png"
+                      src="/assets/icons/css.png"
                       alt="Experience icon"
                       class="icon"
                     />
@@ -118,7 +116,7 @@
                   </article>
                   <article>
                     <img
-                    src="../../../assets/icons/javascript.png"
+                    src="/assets/icons/javascript.png"
                       alt="Experience icon"
                       class="icon"
                     />
@@ -128,7 +126,7 @@
                   </article>
                   <article>
                     <img
-                    src="../../../assets/icons/jquery.png"
+                    src="/assets/icons/jquery.png"
                       alt="Experience icon"
                       class="icon"
                     />
@@ -138,7 +136,7 @@
                   </article>
                                    <article>
                     <img
-                    src="../../../assets/icons/angular.png"
+                    src="/assets/icons/angular.png"
                       alt="Experience icon"
                       class="icon"
                     />
@@ -153,7 +151,7 @@
                 <div class="article-container">
                   <article>
                     <img
-                    src="../../../assets/icons/csharp.png"
+                    src="/assets/icons/csharp.png"
                       alt="Experience icon"
                       class="icon"
                     />
@@ -163,7 +161,7 @@
                   </article>
                   <article>
                     <img
-                    src="../../../assets/icons/dotnet.png"
+                    src="/assets/icons/dotnet.png"
                       alt="Experience icon"
                       class="icon"
                     />
@@ -173,7 +171,7 @@
                   </article>
                   <article>
                     <img
-                    src="../../../assets/icons/dotnet.png"
+                    src="/assets/icons/dotnet.png"
                       alt="Experience icon"
                       class="icon"
                     />
@@ -183,7 +181,7 @@
                   </article>
                    <article>
                     <img
-                    src="../../../assets/icons/sqlserver.png"
+                    src="/assets/icons/sqlserver.png"
                       alt="Experience icon"
                       class="icon"
                     />
@@ -193,7 +191,7 @@
                   </article>
                   <article>
                     <img
-                    src="../../../assets/icons/github.png"
+                    src="/assets/icons/github.png"
                       alt="Experience icon"
                       class="icon"
                     />
@@ -206,7 +204,7 @@
             </div>
           </div>
           <img
-            src="../../../assets/icons/arrow.png"
+            src="/assets/icons/arrow.png"
             alt="Arrow icon"
             class="icon arrow"
             onclick="location.href='./#projects'"
@@ -221,7 +219,7 @@
                 <p>Online building plan engine</p>
                 <div class="article-container">
                   <img
-                    src="../../../assets/icons/house.png"
+                    src="/assets/icons/house.png"
                     alt="Project 1"
                     class="project-img"
                   />
@@ -246,7 +244,7 @@
                 <p>Online building Plan approval system</p>
                 <div class="article-container">
                   <img
-                    src="../../../assets/icons/building-plan.png"
+                    src="/assets/icons/building-plan.png"
                     alt="Project 2"
                     class="project-img"
                   />
@@ -270,7 +268,7 @@
             </div>
           </div>
           <img
-            src="../../../assets/icons/arrow.png"
+            src="/assets/icons/arrow.png"
             alt="Arrow icon"
             class="icon arrow"
             onclick="location.href='./#contact'"
@@ -281,7 +279,7 @@
           <div class="contact-info-upper-container">
             <div class="contact-info-container">
               <img
-                src="../../../assets/icons/gmail.png"
+                src="/assets/icons/gmail.png"
                 alt="Email icon"
                 class="icon contact-icon email-icon"
               />
@@ -289,11 +287,13 @@
             </div>
             <div class="contact-info-container">
               <img
-                src="../../../assets/icons/linkedin.png"
+                src="/assets/icons/linkedin.png"
                 alt="LinkedIn icon"
                 class="icon contact-icon"
               />
-              <p><a href="https://www.linkedin.com/in/marimuthu-m1997">LinkedIn</a></p>
+              <p>
+                <a href="https://www.linkedin.com/in/marimuthu-m1997" target="_blank">LinkedIn</a>
+              </p>
             </div>
           </div>
         </section>

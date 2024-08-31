@@ -1,4 +1,4 @@
-import { Component,HostListener, OnInit } from '@angular/core';
+import { Component,HostListener, OnInit,ViewChild } from '@angular/core';
 import { trigger, transition, style, animate } from '@angular/animations';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatSidenavModule } from '@angular/material/sidenav';
@@ -6,9 +6,9 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
 import { MatListModule } from '@angular/material/list';
 import { MatCardModule } from '@angular/material/card';
-import { NgIf,CommonModule,DOCUMENT } from '@angular/common';
+import { NgIf,CommonModule } from '@angular/common';
 import { MatMenuModule } from '@angular/material/menu';
-
+import { MatMenuTrigger } from '@angular/material/menu';
 
 @Component({
   selector: 'app-home',
@@ -36,9 +36,10 @@ import { MatMenuModule } from '@angular/material/menu';
   ]
 })
 export class HomeComponent implements OnInit {
- 
+  @ViewChild(MatMenuTrigger) menuTrigger!: MatMenuTrigger;
   isMobile: boolean = false;
   isToolbarAtTop: boolean = false;
+  menuOpen: boolean = false;
   projects:any = [];
 
   constructor() {
@@ -60,10 +61,39 @@ export class HomeComponent implements OnInit {
         description: 'making building plan as per rules',
         image: '../../../assets/icons/social.png',
         link: 'https://bplancheck.com'
+      },{
+        title: 'OBPAS',
+        subtitle: 'Online building plan approval system',
+        description: 'Verifying building plan as per rules ang generating reports',
+        image: '../../../assets/icons/social.png',
+        link: 'https://pbmc-obpas.com'
+      },
+      {
+        title: 'House Planner',
+        subtitle: 'Online building plan making system',
+        description: 'making building plan as per rules',
+        image: '../../../assets/icons/social.png',
+        link: 'https://bplancheck.com'
       }
     ];
   
   }
+
+  toggleMenu() {
+    this.menuOpen = !this.menuOpen;
+    if (this.menuOpen) {
+      this.menuTrigger.openMenu();
+    } else {
+      this.menuTrigger.closeMenu();
+    }
+  }
+
+  
+  closeMenu() {
+    this.menuOpen = false;
+    this.menuTrigger.closeMenu();
+  }
+
 
   checkScreenSize() {
     const width = window.innerWidth;
@@ -117,6 +147,7 @@ export class HomeComponent implements OnInit {
   }
 
   scrollTo(section: string) {
+    this.menuOpen = false;
     const element = document.getElementById(section);
     if (element) {
       const yOffset = -64-50; // Adjust this value to the height of your toolbar
