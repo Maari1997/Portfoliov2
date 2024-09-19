@@ -3,7 +3,7 @@
       <button mat-icon-button [matMenuTriggerFor]="menu" *ngIf="isMobile" (click)="toggleMenu()">
         <mat-icon>{{ menuOpen ? 'close' : 'menu' }}</mat-icon>
       </button>
-      <span>Portfolio</span>
+      <span>Maari</span>
       <span class="spacer"></span>
       <button mat-button *ngIf="!isMobile" (click)="scrollTo('home')">About</button>
       <button mat-button *ngIf="!isMobile" (click)="scrollTo('experience')">Experience</button>
@@ -19,19 +19,19 @@
     </mat-menu>
   
     <div class="content">
-        <section id="home" class="about-section" style="gap:3rem" @fadeIn> 
-                <div class="about-image">
-                  <img src="assets/icons/profile_.png" alt="Marimuthu" />
-                </div>                
+       <!-- HOME SECTION -->
+      
+        <section id="home" class="home-section" style="gap:9rem" @fadeIn> 
+                               
                 <div class="about-details section__text">
-                  <p class="section__text__p1">Hello, I'm</p>
-                  <h1 class="title">Marimuthu M</h1>
-                  <p class="section__text__p2">.NET Developer</p>
+                  <h1 class="section__text__p1">Hi,</h1>
+                  <h1 class="title"><span class="iamclass">I'm </span> Marimuthu</h1>
+                  <h1 class="section__text__p2">Web Developer</h1>
                   <div class="btn-container">
                     <button  class="btn btn-color-2"
                     onclick="window.open('assets/icons/RESUME.pdf', '_blank')"
                     >
-                      Download CV
+                      Resume
                     </button>
                     <!-- <button  class="btn btn-color-1" onclick="location.href='./#contact'">
                       Contact Info
@@ -52,13 +52,23 @@
                         class="icon"
                       />
                     </a>
+                    <a href="mailto:mmarimuthu1997@gmail.com">
+                      <img
+                        src="assets/icons/gmail.png"
+                        alt="My Gmail account"
+                        class="icon"
+                      />
+                    </a>
                   </div>
-                  
+                                   
                 </div>
-                    
+                <div class="about-image">
+                  <img src="assets/icons/profile_.jpg" alt="Marimuthu" />
+                </div> 
         </section>
+        
         <section id="about" class="about-section" @fadeIn>  
-          <h3 class="title">About Me</h3>
+          <h3 class="subtitle">About Me</h3>
           <div class="section-container">             
               <div class="about-containers">
                 <div class="details-container">
@@ -87,8 +97,9 @@
               </div>           
           </div>          
         </section>
-        <section id="experience" class="about-section" @fadeIn>
-          <h1 class="title">Experience</h1>
+        
+        <section id="experience" class="experience-section" @fadeIn>
+          <h1 class="subtitle">Experience</h1>
           <div class="experience-details-container">
             <div class="about-containers">
               <div class="details-container">
@@ -210,9 +221,123 @@
             onclick="location.href='./#projects'"
           />
         </section>           
+
+        <section id="experience" class="experience-section" @fadeIn>
+          <h1 class="subtitle">Experience</h1>
+          <div class="experience-details-container">
+            <div class="about-containers">
+              <div class="details-container">
+                <h2 class="experience-sub-title">Frontend Technologies</h2>
+                <div class="article-container">
+                  <mat-card class="mat-elevation-z4">
+                    <mat-card-header>
+                      <mat-card-avatar>
+                        <img src="assets/icons/html.png" alt="HTML icon" />
+                      </mat-card-avatar>
+                      <mat-card-title>HTML</mat-card-title>
+                    </mat-card-header>
+                  </mat-card>
+        
+                  <mat-card class="mat-elevation-z4">
+                    <mat-card-header>
+                      <mat-card-avatar>
+                        <img src="assets/icons/css.png" alt="CSS icon" />
+                      </mat-card-avatar>
+                      <mat-card-title>CSS</mat-card-title>
+                    </mat-card-header>
+                  </mat-card>
+        
+                  <mat-card class="mat-elevation-z4">
+                    <mat-card-header>
+                      <mat-card-avatar>
+                        <img src="assets/icons/javascript.png" alt="JavaScript icon" />
+                      </mat-card-avatar>
+                      <mat-card-title>JavaScript</mat-card-title>
+                    </mat-card-header>
+                  </mat-card>
+        
+                  <mat-card class="mat-elevation-z4">
+                    <mat-card-header>
+                      <mat-card-avatar>
+                        <img src="assets/icons/jquery.png" alt="jQuery icon" />
+                      </mat-card-avatar>
+                      <mat-card-title>jQuery</mat-card-title>
+                    </mat-card-header>
+                  </mat-card>
+        
+                  <mat-card class="mat-elevation-z4">
+                    <mat-card-header>
+                      <mat-card-avatar>
+                        <img src="assets/icons/angular.png" alt="Angular icon" />
+                      </mat-card-avatar>
+                      <mat-card-title>Angular</mat-card-title>
+                    </mat-card-header>
+                  </mat-card>
+                </div>
+              </div>
+        
+              <div class="details-container">
+                <h2 class="experience-sub-title">Backend Technologies</h2>
+                <div class="article-container">
+                  <mat-card class="mat-elevation-z4">
+                    <mat-card-header>
+                      <mat-card-avatar>
+                        <img src="assets/icons/csharp.png" alt="C# icon" />
+                      </mat-card-avatar>
+                      <mat-card-title>C#</mat-card-title>
+                    </mat-card-header>
+                  </mat-card>
+        
+                  <mat-card class="mat-elevation-z4">
+                    <mat-card-header>
+                      <mat-card-avatar>
+                        <img src="assets/icons/dotnet.png" alt="ASP.NET icon" />
+                      </mat-card-avatar>
+                      <mat-card-title>ASP.NET</mat-card-title>
+                    </mat-card-header>
+                  </mat-card>
+        
+                  <mat-card class="mat-elevation-z4">
+                    <mat-card-header>
+                      <mat-card-avatar>
+                        <img src="assets/icons/dotnet.png" alt="MVC icon" />
+                      </mat-card-avatar>
+                      <mat-card-title>MVC</mat-card-title>
+                    </mat-card-header>
+                  </mat-card>
+        
+                  <mat-card class="mat-elevation-z4">
+                    <mat-card-header>
+                      <mat-card-avatar>
+                        <img src="assets/icons/sqlserver.png" alt="MS SQL icon" />
+                      </mat-card-avatar>
+                      <mat-card-title>MS SQL</mat-card-title>
+                    </mat-card-header>
+                  </mat-card>
+        
+                  <mat-card class="mat-elevation-z4">
+                    <mat-card-header>
+                      <mat-card-avatar>
+                        <img src="assets/icons/github.png" alt="Git icon" />
+                      </mat-card-avatar>
+                      <mat-card-title>Git</mat-card-title>
+                    </mat-card-header>
+                  </mat-card>
+                </div>
+              </div>
+            </div>
+          </div>
+          <img
+            src="assets/icons/arrow.png"
+            alt="Arrow icon"
+            class="icon arrow"
+            onclick="location.href='./#projects'"
+          />
+        </section>
+        
     
         <section id="projects" class="projects-section" @fadeIn>
-          <h1 class="title">Projects</h1>
+          <h1 class="subtitle">Projects</h1>
           <div class="experience-details-container" style="margin-top: 2rem;">
             <div class="about-containers">
               <div class="details-container color-container">
@@ -224,21 +349,8 @@
                     class="project-img"
                   />
                 </div>
-                <h2 class="experience-sub-title project-title">House Planner</h2>
-                <div class="btn-container">
-                  <!-- <button
-                    class="btn btn-color-2 project-btn"
-                    onclick="location.href='https://github.com/'"
-                  >
-                    Github
-                  </button> -->
-                  <button
-                    class="btn btn-color-2 project-btn"
-                    onclick="location.href='https://bplancheck.com/'"
-                  >
-                    Live Demo
-                  </button>
-                </div>
+                <h2 class="experience-sub-title project-title">Web Development</h2>
+                
               </div>
               <div class="details-container color-container">
                 <p>Online building Plan approval system</p>
@@ -249,21 +361,8 @@
                     class="project-img"
                   />
                 </div>
-                <h2 class="experience-sub-title project-title">OBPAS</h2>
-                <div class="btn-container">
-                  <!-- <button
-                    class="btn btn-color-2 project-btn"
-                    onclick="location.href='https://github.com/'"
-                  >
-                    Github
-                  </button> -->
-                  <button
-                    class="btn btn-color-2 project-btn"
-                    onclick="location.href='https://pbmc-obpas.com/'"
-                  >
-                    Live Demo
-                  </button>
-                </div>
+                <h2 class="experience-sub-title project-title">App Development</h2>
+                
               </div>              
             </div>
           </div>
@@ -274,8 +373,8 @@
             onclick="location.href='./#contact'"
           />
         </section>
-        <section id="contact">
-          <h1 class="title">Contact Me</h1>
+        <!-- <section id="contact_" class="contact-section" style="display:none;" @fadeIn>
+          <h1 class="subtitle">Contact Me</h1>
           <div class="contact-info-upper-container">
             <div class="contact-info-container">
               <img
@@ -296,10 +395,73 @@
               </p>
             </div>
           </div>
-        </section>
-        <footer>
-          <p>Copyright &#169;2024. All Rights Reserved.</p>
-        </footer>
+        </section> -->
+        <section id="contact">
+  
+          <h1 class="section-header">Contact</h1>
+          
+          <div class="contact-wrapper">
+          
+          <!-- Left contact page --> 
+            
+            <form id="contact-form" class="form-horizontal" role="form">
+               
+              <div class="form-group">
+                <div class="col-sm-12">
+                  <input type="text" class="form-control" id="name" placeholder="NAME" name="name" value="" required>
+                </div>
+              </div>
+        
+              <div class="form-group">
+                <div class="col-sm-12">
+                  <input type="email" class="form-control" id="email" placeholder="EMAIL" name="email" value="" required>
+                </div>
+              </div>
+        
+              <textarea class="form-control" rows="10" placeholder="MESSAGE" name="message" required></textarea>
+              
+              <button class="btn btn-primary send-button" id="submit" type="submit" value="SEND">
+                SEND              
+              </button>
+              
+            </form>
+            
+          <!-- Left contact page --> 
+            
+              <div class="direct-contact-container">
+        
+                <ul class="contact-list">
+                  <li class="list-item"><i class="fa fa-map-marker fa-2x"></i> <span class="contact-text place" style="margin-left: 10px;">Chennai</span></li>
+                  
+                  <li class="list-item"><i class="fa fa-phone fa-2x"></i><span class="contact-text phone"><a href="tel:1-212-555-5555" title="Give me a call">(+91) 9360623548</a></span></li>
+                  
+                  <li class="list-item"><i class="fa fa-envelope fa-2x"></i><span class="contact-text gmail"><a href="mailto:#" title="Send me an email">mmarimuthu1997&#64;gmail.com</a></span></li>
+                  
+                </ul>
+        
+                <hr>
+                <ul class="social-media-list">
+                  <li><a href="#" target="_blank" class="contact-icon">
+                    <i class="fa fa-github" aria-hidden="true"></i></a>
+                  </li>
+                  <li><a href="#" target="_blank" class="contact-icon">
+                    <i class="fa fa-twitter" aria-hidden="true"></i></a>
+                  </li>
+                  <li><a href="#" target="_blank" class="contact-icon">
+                    <i class="fa fa-instagram" aria-hidden="true"></i></a>
+                  </li>       
+                </ul>
+                <hr>
+        
+                <div class="copyright">&copy; ALL OF THE RIGHTS RESERVED</div>
+        
+              </div>
+            
+          </div>
+          
+        </section>  
+                 
+        
       </div>
 </div>
   

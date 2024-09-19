@@ -47,36 +47,7 @@ export class HomeComponent implements OnInit {
   }
   
   ngOnInit(): void {
-    this.projects = [
-      {
-        title: 'OBPAS',
-        subtitle: 'Online building plan approval system',
-        description: 'Verifying building plan as per rules ang generating reports',
-        image: '../../../assets/icons/social.png',
-        link: 'https://pbmc-obpas.com'
-      },
-      {
-        title: 'House Planner',
-        subtitle: 'Online building plan making system',
-        description: 'making building plan as per rules',
-        image: '../../../assets/icons/social.png',
-        link: 'https://bplancheck.com'
-      },{
-        title: 'OBPAS',
-        subtitle: 'Online building plan approval system',
-        description: 'Verifying building plan as per rules ang generating reports',
-        image: '../../../assets/icons/social.png',
-        link: 'https://pbmc-obpas.com'
-      },
-      {
-        title: 'House Planner',
-        subtitle: 'Online building plan making system',
-        description: 'making building plan as per rules',
-        image: '../../../assets/icons/social.png',
-        link: 'https://bplancheck.com'
-      }
-    ];
-  
+    
   }
 
   toggleMenu() {
@@ -136,12 +107,12 @@ export class HomeComponent implements OnInit {
 
       const distance = rect.top - toolbarHeight;
 
-      if (distance < 0) {
-        const fadeAmount = Math.max(0, 1 + distance / rect.height);
-        (section as HTMLElement).style.opacity = fadeAmount.toString();
-      } else {
-        (section as HTMLElement).style.opacity = '1';
-      }
+      // if (distance < 0) {
+      //   const fadeAmount = Math.max(0, 1 + distance / rect.height);
+      //   (section as HTMLElement).style.opacity = fadeAmount.toString();
+      // } else {
+      //   (section as HTMLElement).style.opacity = '1';
+      // }
     });
     
   }
