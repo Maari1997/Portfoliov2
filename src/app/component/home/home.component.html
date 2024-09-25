@@ -5,16 +5,18 @@
       </button>
       <span>Maari</span>
       <span class="spacer"></span>
-      <button mat-button *ngIf="!isMobile" (click)="scrollTo('home')">About</button>
+      <button mat-button *ngIf="!isMobile" (click)="scrollTo('home')">Home</button>
+      <button mat-button *ngIf="!isMobile" (click)="scrollTo('about')">About</button>
       <button mat-button *ngIf="!isMobile" (click)="scrollTo('experience')">Experience</button>
-      <button mat-button *ngIf="!isMobile" (click)="scrollTo('projects')">Projects</button>      
+      <button mat-button *ngIf="!isMobile" (click)="scrollTo('service')">Service</button>      
       <button mat-button *ngIf="!isMobile" (click)="scrollTo('contact')">Contact</button>
     </mat-toolbar>
   
     <mat-menu #menu="matMenu">
-        <button mat-menu-item (click)="scrollTo('home')">About</button>
+      <button mat-menu-item (click)="scrollTo('home')">Home</button>
+        <button mat-menu-item (click)="scrollTo('about')">About</button>
         <button mat-menu-item  (click)="scrollTo('experience')">Experience</button>
-        <button mat-menu-item (click)="scrollTo('projects')">Projects</button>        
+        <button mat-menu-item (click)="scrollTo('service')">Projects</button>        
         <button mat-menu-item (click)="scrollTo('contact')">Contact</button>
     </mat-menu>
   
@@ -32,11 +34,9 @@
                     onclick="window.open('assets/icons/RESUME.pdf', '_blank')"
                     >
                       Resume
-                    </button>
-                    <!-- <button  class="btn btn-color-1" onclick="location.href='./#contact'">
-                      Contact Info
-                    </button> -->
+                    </button>                   
                   </div>
+                  <div class="animated-underline"></div>  
                   <div id="socials-container">
                     <a href="https://www.linkedin.com/in/mmarimuthu1997/" target="_blank">
                       <img
@@ -60,269 +60,74 @@
                       />
                     </a>
                   </div>
-                                   
+                  <div class="animated-underline"></div>     
                 </div>
                 <div class="about-image">
                   <img src="assets/icons/profile_.jpg" alt="Marimuthu" />
                 </div> 
-        </section>
-        
-        <section id="about" class="about-section" @fadeIn>  
-          <h3 class="subtitle">About Me</h3>
-          <div class="section-container">             
-              <div class="about-containers">
-                <div class="details-container">
-                  <img
-                    src="assets/icons/experience.png"
-                    alt="Experience icon"
-                    class="icon"
-                  />
-                  <h2 style="font-weight: bold;">Experience</h2>
-                  <p>2+ years <br />Fullstack Development</p>
-                </div>
-                <div class="details-container">
-                  <img
-                    src="assets/icons/education.png"
-                    alt="Education icon"
-                    class="icon"
-                  />
-                  <h2 style="font-weight: bold;">Education</h2>
-                  <p>B.E Bachelors Degree</p>
-                </div>
-              </div>
-              <div class="text-container">
-                <p>
-                  I am a dedicated software developer with a focus on front-end development using Angular and full-stack development with ASP.NET. My passion lies in impactful applications. With a strong foundation in coding best practices and a keen eye for design. I am committed to continuous learning and am always exploring new technologies to stay ahead in the ever-evolving tech landscape. My goal is to create innovative solutions that meet the needs of users expectations.
-                </p>
-              </div>           
-          </div>          
-        </section>
-        
-        <section id="experience" class="experience-section" @fadeIn>
-          <h1 class="subtitle">Experience</h1>
-          <div class="experience-details-container">
+                
+                <img
+            src="assets/icons/arrow.png"
+            alt="Arrow icon"
+            class="icon arrow"
+            (click)="scrollTo('about')"
+          />
+        </section>        
+                                
+        <section id="about" class="about-section">
+          <h2>About Me</h2>
+          <div class="section-container">
             <div class="about-containers">
               <div class="details-container">
-                <h2 class="experience-sub-title">Frontend Technologies</h2>
-                <div class="article-container">
-                  <article>
-                    <img
-                      src="assets/icons/html.png"
-                      alt="Experience icon"
-                      class="icon"
-                    />
-                    <div>
-                      <h3>HTML</h3>                      
-                    </div>
-                  </article>
-                  <article>
-                    <img
-                      src="assets/icons/css.png"
-                      alt="Experience icon"
-                      class="icon"
-                    />
-                    <div>
-                      <h3>CSS</h3>
-                    </div>
-                  </article>
-                  <article>
-                    <img
-                    src="assets/icons/javascript.png"
-                      alt="Experience icon"
-                      class="icon"
-                    />
-                    <div>
-                      <h3>JavaScript</h3>
-                    </div>
-                  </article>
-                  <article>
-                    <img
-                    src="assets/icons/jquery.png"
-                      alt="Experience icon"
-                      class="icon"
-                    />
-                    <div>
-                      <h3>jQuery</h3>
-                    </div>
-                  </article>
-                                   <article>
-                    <img
-                    src="assets/icons/angular.png"
-                      alt="Experience icon"
-                      class="icon"
-                    />
-                    <div>
-                      <h3>Angular</h3>
-                    </div>
-                  </article>
-                  </div>
+                <img src="assets/icons/experience.png" alt="Experience icon" class="icon" />
+                <h2 class="details-title">Experience</h2>
+                <p>2+ years<br />Fullstack Development</p>
               </div>
               <div class="details-container">
-                <h2 class="experience-sub-title">Backend Technologies</h2>
-                <div class="article-container">
-                  <article>
-                    <img
-                    src="assets/icons/csharp.png"
-                      alt="Experience icon"
-                      class="icon"
-                    />
-                    <div>
-                      <h3>C#</h3>
-                    </div>
-                  </article>
-                  <article>
-                    <img
-                    src="assets/icons/dotnet.png"
-                      alt="Experience icon"
-                      class="icon"
-                    />
-                    <div>
-                      <h3>ASP.NET</h3>
-                    </div>
-                  </article>
-                  <article>
-                    <img
-                    src="assets/icons/dotnet.png"
-                      alt="Experience icon"
-                      class="icon"
-                    />
-                    <div>
-                      <h3>MVC</h3>
-                    </div>
-                  </article>
-                   <article>
-                    <img
-                    src="assets/icons/sqlserver.png"
-                      alt="Experience icon"
-                      class="icon"
-                    />
-                    <div>
-                      <h3>MS SQL</h3>
-                    </div>
-                  </article>
-                  <article>
-                    <img
-                    src="assets/icons/github.png"
-                      alt="Experience icon"
-                      class="icon"
-                    />
-                    <div>
-                      <h3>Git</h3>
-                    </div>
-                  </article>
-                </div>
+                <img src="assets/icons/education.png" alt="Education icon" class="icon" />
+                <h2 class="details-title">Education</h2>
+                <p>B.E Bachelor's Degree</p>
               </div>
+            </div>
+            <div class="text-container">
+              <p>
+                I am a dedicated software developer specializing in front-end development with Angular and full-stack development using ASP.NET. I have a passion for building impactful applications and bring a strong foundation in coding best practices and design. Committed to continuous learning, I strive to stay ahead of emerging technologies. My goal is to create innovative, user-centric solutions that meet and exceed expectations.
+              </p>
             </div>
           </div>
           <img
             src="assets/icons/arrow.png"
             alt="Arrow icon"
             class="icon arrow"
-            onclick="location.href='./#projects'"
+            (click)="scrollTo('experience')"
           />
-        </section>           
+        </section>
+        
 
-        <section id="experience" class="experience-section" @fadeIn>
-          <h1 class="subtitle">Experience</h1>
+        <section id="experience" class="experience-section">
+          <h2>Experience</h2>
           <div class="experience-details-container">
             <div class="about-containers">
               <div class="details-container">
                 <h2 class="experience-sub-title">Frontend Technologies</h2>
                 <div class="article-container">
-                  <mat-card class="mat-elevation-z4">
-                    <mat-card-header>
-                      <mat-card-avatar>
-                        <img src="assets/icons/html.png" alt="HTML icon" />
-                      </mat-card-avatar>
-                      <mat-card-title>HTML</mat-card-title>
-                    </mat-card-header>
-                  </mat-card>
-        
-                  <mat-card class="mat-elevation-z4">
-                    <mat-card-header>
-                      <mat-card-avatar>
-                        <img src="assets/icons/css.png" alt="CSS icon" />
-                      </mat-card-avatar>
-                      <mat-card-title>CSS</mat-card-title>
-                    </mat-card-header>
-                  </mat-card>
-        
-                  <mat-card class="mat-elevation-z4">
-                    <mat-card-header>
-                      <mat-card-avatar>
-                        <img src="assets/icons/javascript.png" alt="JavaScript icon" />
-                      </mat-card-avatar>
-                      <mat-card-title>JavaScript</mat-card-title>
-                    </mat-card-header>
-                  </mat-card>
-        
-                  <mat-card class="mat-elevation-z4">
-                    <mat-card-header>
-                      <mat-card-avatar>
-                        <img src="assets/icons/jquery.png" alt="jQuery icon" />
-                      </mat-card-avatar>
-                      <mat-card-title>jQuery</mat-card-title>
-                    </mat-card-header>
-                  </mat-card>
-        
-                  <mat-card class="mat-elevation-z4">
-                    <mat-card-header>
-                      <mat-card-avatar>
-                        <img src="assets/icons/angular.png" alt="Angular icon" />
-                      </mat-card-avatar>
-                      <mat-card-title>Angular</mat-card-title>
-                    </mat-card-header>
-                  </mat-card>
+                  <article *ngFor="let frontendTech of frontendTechnologies">
+                    <img [src]="frontendTech.icon" alt="Experience icon" class="icon" />
+                    <div>
+                      <h3>{{ frontendTech.name }}</h3>
+                    </div>
+                  </article>
                 </div>
               </div>
-        
               <div class="details-container">
                 <h2 class="experience-sub-title">Backend Technologies</h2>
                 <div class="article-container">
-                  <mat-card class="mat-elevation-z4">
-                    <mat-card-header>
-                      <mat-card-avatar>
-                        <img src="assets/icons/csharp.png" alt="C# icon" />
-                      </mat-card-avatar>
-                      <mat-card-title>C#</mat-card-title>
-                    </mat-card-header>
-                  </mat-card>
-        
-                  <mat-card class="mat-elevation-z4">
-                    <mat-card-header>
-                      <mat-card-avatar>
-                        <img src="assets/icons/dotnet.png" alt="ASP.NET icon" />
-                      </mat-card-avatar>
-                      <mat-card-title>ASP.NET</mat-card-title>
-                    </mat-card-header>
-                  </mat-card>
-        
-                  <mat-card class="mat-elevation-z4">
-                    <mat-card-header>
-                      <mat-card-avatar>
-                        <img src="assets/icons/dotnet.png" alt="MVC icon" />
-                      </mat-card-avatar>
-                      <mat-card-title>MVC</mat-card-title>
-                    </mat-card-header>
-                  </mat-card>
-        
-                  <mat-card class="mat-elevation-z4">
-                    <mat-card-header>
-                      <mat-card-avatar>
-                        <img src="assets/icons/sqlserver.png" alt="MS SQL icon" />
-                      </mat-card-avatar>
-                      <mat-card-title>MS SQL</mat-card-title>
-                    </mat-card-header>
-                  </mat-card>
-        
-                  <mat-card class="mat-elevation-z4">
-                    <mat-card-header>
-                      <mat-card-avatar>
-                        <img src="assets/icons/github.png" alt="Git icon" />
-                      </mat-card-avatar>
-                      <mat-card-title>Git</mat-card-title>
-                    </mat-card-header>
-                  </mat-card>
+                  <article *ngFor="let backendTech of backendTechnologies">
+                    <img [src]="backendTech.icon" alt="Experience icon" class="icon" />
+                    <div>
+                      <h3>{{ backendTech.name }}</h3>
+                    </div>
+                  </article>
                 </div>
               </div>
             </div>
@@ -331,48 +136,33 @@
             src="assets/icons/arrow.png"
             alt="Arrow icon"
             class="icon arrow"
-            onclick="location.href='./#projects'"
+            (click)="scrollTo('service')"
           />
-        </section>
+        </section>        
+
+        <section id="service" class="services-section">
+          <h2>Our Services</h2>
+          <div class="services-container">
+            <mat-card class="service-card" *ngFor="let service of services">
+              <img mat-card-image [src]="service.icon" alt="{{ service.title }} logo">
+              <mat-card-header>
+                <mat-card-title>{{ service.title }}</mat-card-title>
+              </mat-card-header>
+              <mat-card-content>
+                <p>{{ service.description }}</p>
+              </mat-card-content>
+            </mat-card>
+          </div>
+          <img
+            src="assets/icons/arrow.png"
+            alt="Arrow icon"
+            class="icon arrow"
+            (click)="scrollTo('contact')"
+          />
+        </section>     
         
     
-        <section id="projects" class="projects-section" @fadeIn>
-          <h1 class="subtitle">Projects</h1>
-          <div class="experience-details-container" style="margin-top: 2rem;">
-            <div class="about-containers">
-              <div class="details-container color-container">
-                <p>Online building plan engine</p>
-                <div class="article-container">
-                  <img
-                    src="assets/icons/house.png"
-                    alt="Project 1"
-                    class="project-img"
-                  />
-                </div>
-                <h2 class="experience-sub-title project-title">Web Development</h2>
-                
-              </div>
-              <div class="details-container color-container">
-                <p>Online building Plan approval system</p>
-                <div class="article-container">
-                  <img
-                    src="assets/icons/building-plan.png"
-                    alt="Project 2"
-                    class="project-img"
-                  />
-                </div>
-                <h2 class="experience-sub-title project-title">App Development</h2>
-                
-              </div>              
-            </div>
-          </div>
-          <img
-            src="assets/icons/arrow.png"
-            alt="Arrow icon"
-            class="icon arrow"
-            onclick="location.href='./#contact'"
-          />
-        </section>
+        
         <!-- <section id="contact_" class="contact-section" style="display:none;" @fadeIn>
           <h1 class="subtitle">Contact Me</h1>
           <div class="contact-info-upper-container">
@@ -396,9 +186,10 @@
             </div>
           </div>
         </section> -->
+       
         <section id="contact">
   
-          <h1 class="section-header">Contact</h1>
+          <h2>Contact</h2>
           
           <div class="contact-wrapper">
           
@@ -453,15 +244,17 @@
                 </ul>
                 <hr>
         
-                <div class="copyright">&copy; ALL OF THE RIGHTS RESERVED</div>
-        
+                <div class="copyright">&copy; ALL OF THE RIGHTS RESERVED                  
+                </div>
+               
               </div>
-            
+              
           </div>
-          
+          <a href="javascript:void(0)" (click)="scrollToTop()" class="scroll-icon">
+            <i class="fa fa-arrow-up" aria-hidden="true"></i>
+          </a>
         </section>  
                  
-        
       </div>
 </div>
   

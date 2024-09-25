@@ -40,10 +40,51 @@ export class HomeComponent implements OnInit {
   isMobile: boolean = false;
   isToolbarAtTop: boolean = false;
   menuOpen: boolean = false;
-  projects:any = [];
+  services:any = [];
+  frontendTechnologies:any = [];
+  backendTechnologies:any = [];
 
   constructor() {
     this.checkScreenSize();
+    this.services = [
+      
+      { 
+        title: 'Web Development', 
+        description: 'Building modern, responsive websites and web applications.', 
+        icon: 'assets/icons/app-development.png'
+      },
+      { 
+        title: '.NET Development', 
+        description: 'Custom .NET development for enterprise solutions.', 
+        icon: 'assets/icons/wep-development.png' 
+      },
+      { 
+        title: 'API Development', 
+        description: 'Developing secure and scalable APIs using .NET Core.', 
+        icon: 'assets/icons/api-development.png' 
+      },
+      { 
+        title: 'Database Management', 
+        description: 'Optimizing databases with SQL Server and Entity Framework.', 
+        icon: 'assets/icons/database-management.png' 
+      }
+    ];
+
+    this.frontendTechnologies = [
+      { name: 'HTML', icon: 'assets/icons/html.png' },
+      { name: 'CSS', icon: 'assets/icons/css.png' },
+      { name: 'JavaScript', icon: 'assets/icons/javascript.png' },
+      { name: 'jQuery', icon: 'assets/icons/jquery.png' },
+      { name: 'Angular', icon: 'assets/icons/angular.png' }
+    ];
+  
+    this.backendTechnologies = [
+      { name: 'C#', icon: 'assets/icons/csharp.png' },
+      { name: 'ASP.NET', icon: 'assets/icons/dotnet.png' },
+      { name: 'MVC', icon: 'assets/icons/dotnet.png' },
+      { name: 'MS SQL', icon: 'assets/icons/sqlserver.png' },
+      { name: 'Git', icon: 'assets/icons/github.png' }
+    ];
   }
   
   ngOnInit(): void {
@@ -93,8 +134,6 @@ export class HomeComponent implements OnInit {
     }    
     this.applyClipPath();
   }
-
- 
   
   applyClipPath() {
     const toolbarHeight = 64; 
@@ -125,5 +164,9 @@ export class HomeComponent implements OnInit {
       const y = element.getBoundingClientRect().top + window.scrollY + yOffset;
       window.scrollTo({ top: y, behavior: 'smooth' });
     }
+  }
+  
+  scrollToTop(): void {
+    window.scrollTo({ top: 0, behavior: 'smooth' }); // Smooth scroll to the top
   }
 }
