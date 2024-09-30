@@ -9,6 +9,7 @@ import { MatCardModule } from '@angular/material/card';
 import { NgIf,CommonModule } from '@angular/common';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatMenuTrigger } from '@angular/material/menu';
+import * as AOS from 'aos';
 
 @Component({
   selector: 'app-home',
@@ -36,10 +37,14 @@ import { MatMenuTrigger } from '@angular/material/menu';
   ]
 })
 export class HomeComponent implements OnInit {
-  @ViewChild(MatMenuTrigger) menuTrigger!: MatMenuTrigger;
+  // @ViewChild(MatMenuTrigger) menuTrigger!: MatMenuTrigger;
+  // isMobile: boolean = false;
+  // isToolbarAtTop: boolean = false;
+  // menuOpen: boolean = false;
   isMobile: boolean = false;
   isToolbarAtTop: boolean = false;
   menuOpen: boolean = false;
+
   services:any = [];
   frontendTechnologies:any = [];
   backendTechnologies:any = [];
@@ -88,52 +93,35 @@ export class HomeComponent implements OnInit {
   }
   
   ngOnInit(): void {
-    
-  }
-
-  toggleMenu() {
-    this.menuOpen = !this.menuOpen;
-    if (this.menuOpen) {
-      this.menuTrigger.openMenu();
-    } else {
-      this.menuTrigger.closeMenu();
-    }
+    AOS.init();
   }
 
   
-  closeMenu() {
-    this.menuOpen = false;
-    this.menuTrigger.closeMenu();
+  toggleMenu() {
+    this.menuOpen = !this.menuOpen;
   }
-
-
+  
+  closeMenu() {
+    this.menuOpen = false; // Close the menu
+  }
+  
   checkScreenSize() {
-    const width = window.innerWidth;
-    console.log('Width : '+width);
-    this.isMobile = width < 768;    
-  }  
+    this.isMobile = window.innerWidth < 768; // Adjust as necessary
+  }
 
   @HostListener('window:resize')
   onResize() {
-    this.isMobile = window.innerWidth < 768;
+    this.checkScreenSize();
   }
 
   @HostListener('window:scroll', ['$event'])
   onScroll() {
     const scrollPosition = window.scrollY;
-    const threshold = 50;  
-    console.log('Scroll position : '+scrollPosition);
+    const threshold = 50; // Adjust this value as needed
 
-    if (scrollPosition > threshold) 
-    {
-      this.isToolbarAtTop = true;
-    }
-     else 
-    {
-      this.isToolbarAtTop = false;
-    }    
-    this.applyClipPath();
+    this.isToolbarAtTop = scrollPosition > threshold;
   }
+
   
   applyClipPath() {
     const toolbarHeight = 64; 
@@ -146,12 +134,6 @@ export class HomeComponent implements OnInit {
 
       const distance = rect.top - toolbarHeight;
 
-      // if (distance < 0) {
-      //   const fadeAmount = Math.max(0, 1 + distance / rect.height);
-      //   (section as HTMLElement).style.opacity = fadeAmount.toString();
-      // } else {
-      //   (section as HTMLElement).style.opacity = '1';
-      // }
     });
     
   }

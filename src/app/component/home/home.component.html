@@ -1,5 +1,5 @@
 <div class="home-container">
-    <mat-toolbar color="primary" class="mat-elevation-z8 toolbar-fixed" [ngClass]="{'toolbar-top':isToolbarAtTop}">
+    <!-- <mat-toolbar color="primary" class="mat-elevation-z8 toolbar-fixed" [ngClass]="{'toolbar-top':isToolbarAtTop}">
       <button mat-icon-button [matMenuTriggerFor]="menu" *ngIf="isMobile" (click)="toggleMenu()">
         <mat-icon>{{ menuOpen ? 'close' : 'menu' }}</mat-icon>
       </button>
@@ -19,111 +19,142 @@
         <button mat-menu-item (click)="scrollTo('service')">Projects</button>        
         <button mat-menu-item (click)="scrollTo('contact')">Contact</button>
     </mat-menu>
+   -->
+   
+   <div class="custom-navbar" [ngClass]="{'toolbar-top': isToolbarAtTop}">
+    <button mat-icon-button *ngIf="isMobile" (click)="toggleMenu()">
+      <mat-icon>{{ menuOpen ? 'close' : 'menu' }}</mat-icon>
+    </button>
+    <span class="name">Portfolio</span>
+    <span class="spacer"></span>
+    <div *ngIf="!isMobile" class="desktop-menu">
+      <button class="mat-btn" mat-button (click)="scrollTo('home')">Home</button>
+      <button class="mat-btn" mat-button (click)="scrollTo('about')">About</button>
+      <button class="mat-btn" mat-button (click)="scrollTo('experience')">Experience</button>
+      <button class="mat-btn" mat-button (click)="scrollTo('service')">Service</button>
+      <button class="mat-btn" mat-button (click)="scrollTo('contact')">Contact</button>
+    </div>
+    
+    <!-- Mobile menu -->
+    <div class="mobile-menu" *ngIf="isMobile && menuOpen">
+      <button class="mat-btn" mat-button (click)="scrollTo('home')" (click)="closeMenu()">Home</button>
+      <button class="mat-btn" mat-button (click)="scrollTo('about')" (click)="closeMenu()">About</button>
+      <button class="mat-btn" mat-button (click)="scrollTo('experience')" (click)="closeMenu()">Experience</button>
+      <button class="mat-btn" mat-button (click)="scrollTo('service')" (click)="closeMenu()">Service</button>
+      <button class="mat-btn" mat-button (click)="scrollTo('contact')" (click)="closeMenu()">Contact</button>
+    </div>
+  </div>
   
+
     <div class="content">
        <!-- HOME SECTION -->
       
-        <section id="home" class="home-section" style="gap:9rem" @fadeIn> 
-                               
-                <div class="about-details section__text">
-                  <h1 class="section__text__p1">Hi,</h1>
-                  <h1 class="title"><span class="iamclass">I'm </span> Marimuthu</h1>
-                  <h1 class="section__text__p2">Web Developer</h1>
-                  <div class="btn-container">
-                    <button  class="btn btn-color-2"
-                    onclick="window.open('assets/icons/RESUME.pdf', '_blank')"
-                    >
-                      Resume
-                    </button>                   
-                  </div>
-                  <div class="animated-underline"></div>  
-                  <div id="socials-container">
-                    <a href="https://www.linkedin.com/in/mmarimuthu1997/" target="_blank">
-                      <img
-                        src="assets/icons/linkedin.png"
-                        alt="My LinkedIn profile"
-                        class="icon"
-                      />
-                    </a>
-                    <a href="https://github.com/Maari1997/" target="_blank">
-                      <img
-                        src="assets/icons/github.png"
-                        alt="My GitHub profile"
-                        class="icon"
-                      />
-                    </a>
-                    <a href="mailto:mmarimuthu1997@gmail.com">
-                      <img
-                        src="assets/icons/gmail.png"
-                        alt="My Gmail account"
-                        class="icon"
-                      />
-                    </a>
-                  </div>
-                  <div class="animated-underline"></div>     
-                </div>
-                <div class="about-image">
-                  <img src="assets/icons/profile_.jpg" alt="Marimuthu" />
-                </div> 
-                
-                <img
-            src="assets/icons/arrow.png"
-            alt="Arrow icon"
-            class="icon arrow"
-            (click)="scrollTo('about')"
-          />
-        </section>        
-                                
-        <section id="about" class="about-section">
-          <h2>About Me</h2>
+        <section id="home" class="home-section" style="gap:9rem" data-aos="fade-in">
+          <div class="about-details section__text" data-aos="fade-up" data-aos-duration="800">
+            <h1 class="section__text__p1" data-aos="fade-right" data-aos-duration="1000" data-aos-delay="300">Hi,</h1>
+            <h1 class="title" data-aos="fade-up" data-aos-duration="900" data-aos-delay="500">
+            <span class="iamclass">I'm </span> Marimuthu
+            </h1>
+            <h1 class="section__text__p2" data-aos="fade-left" data-aos-duration="1000" data-aos-delay="700">Fullstack Developer</h1>
+
+            <div class="btn-container" data-aos="zoom-in" data-aos-duration="1200">
+              <button class="btn btn-color-2"
+                onclick="window.open('assets/icons/RESUME.pdf', '_blank')">
+                Resume
+              </button>
+            </div>
+            
+            <!-- First underline with animation -->
+          <div class="animated-underline" data-aos="fade-right" data-aos-duration="800"></div>
+
+          <!-- Social icons without the "show-on-load" class -->
+          <div id="socials-container">
+  <a href="https://www.linkedin.com/in/mmarimuthu1997/" target="_blank" data-aos="fade-down" data-aos-delay="200" data-aos-duration="1000">
+    <img src="assets/icons/linkedin.png" alt="My LinkedIn profile" class="icon" />
+  </a>
+  <a href="https://github.com/Maari1997/" target="_blank" data-aos="fade-down" data-aos-delay="400" data-aos-duration="1000">
+    <img src="assets/icons/github.png" alt="My GitHub profile" class="icon" />
+  </a>
+  <a href="mailto:mmarimuthu1997@gmail.com" target="_blank" data-aos="fade-down" data-aos-delay="600" data-aos-duration="1000">
+    <img src="assets/icons/gmail.png" alt="My Gmail account" class="icon" />
+  </a>
+          </div>
+
+          <!-- Second underline with animation -->
+          <div class="animated-underline" data-aos="fade-left" data-aos-duration="800"></div>
+
+          </div>
+          <div class="about-image" data-aos="fade-left" data-aos-duration="1000">
+            <img src="assets/icons/profile_.jpg" alt="Marimuthu" />
+          </div>
+          
+          <img src="assets/icons/arrow.png" alt="Arrow icon" class="icon arrow" data-aos="fade-down" data-aos-duration="800" (click)="scrollTo('about')" />
+        </section>                          
+       
+        <section id="about" class="about-section" data-aos="fade-in">
+          <h2 data-aos="fade-down" data-aos-duration="1000">About Me</h2>
+        
           <div class="section-container">
             <div class="about-containers">
-              <div class="details-container">
+              <div class="details-container" data-aos="zoom-in" data-aos-duration="1200" data-aos-delay="200">
                 <img src="assets/icons/experience.png" alt="Experience icon" class="icon" />
                 <h2 class="details-title">Experience</h2>
                 <p>2+ years<br />Fullstack Development</p>
               </div>
-              <div class="details-container">
+              
+              <div class="details-container" data-aos="zoom-in" data-aos-duration="1200" data-aos-delay="400">
                 <img src="assets/icons/education.png" alt="Education icon" class="icon" />
                 <h2 class="details-title">Education</h2>
                 <p>B.E Bachelor's Degree</p>
               </div>
             </div>
-            <div class="text-container">
+        
+            <div class="text-container" data-aos="fade-up" data-aos-duration="1500" data-aos-delay="600">
+              <h3 class="expertise-title" data-aos="fade-right" data-aos-duration="1500">
+                Expertise
+              </h3>
               <p>
                 I am a dedicated software developer specializing in front-end development with Angular and full-stack development using ASP.NET. I have a passion for building impactful applications and bring a strong foundation in coding best practices and design. Committed to continuous learning, I strive to stay ahead of emerging technologies. My goal is to create innovative, user-centric solutions that meet and exceed expectations.
               </p>
             </div>
           </div>
+        
           <img
             src="assets/icons/arrow.png"
             alt="Arrow icon"
             class="icon arrow"
+            data-aos="fade-up"
+            data-aos-duration="1000"
+            data-aos-delay="800"
             (click)="scrollTo('experience')"
           />
         </section>
         
 
-        <section id="experience" class="experience-section">
-          <h2>Experience</h2>
+        <section id="experience" class="experience-section" data-aos="fade-in" data-aos-duration="1000">
+          <h2 data-aos="fade-down" data-aos-duration="1200">Experience</h2>
+        
           <div class="experience-details-container">
             <div class="about-containers">
-              <div class="details-container">
+              <!-- Frontend Technologies Section -->
+              <div class="details-container" data-aos="fade-right" data-aos-duration="1500" data-aos-delay="200">
                 <h2 class="experience-sub-title">Frontend Technologies</h2>
                 <div class="article-container">
-                  <article *ngFor="let frontendTech of frontendTechnologies">
-                    <img [src]="frontendTech.icon" alt="Experience icon" class="icon" />
+                  <article *ngFor="let frontendTech of frontendTechnologies" data-aos="zoom-in" data-aos-duration="1000" data-aos-delay="300">
+                    <img [src]="frontendTech.icon" alt="Frontend Technology icon" class="icon" />
                     <div>
                       <h3>{{ frontendTech.name }}</h3>
                     </div>
                   </article>
                 </div>
               </div>
-              <div class="details-container">
+        
+              <!-- Backend Technologies Section -->
+              <div class="details-container" data-aos="fade-left" data-aos-duration="1500" data-aos-delay="400">
                 <h2 class="experience-sub-title">Backend Technologies</h2>
                 <div class="article-container">
-                  <article *ngFor="let backendTech of backendTechnologies">
-                    <img [src]="backendTech.icon" alt="Experience icon" class="icon" />
+                  <article *ngFor="let backendTech of backendTechnologies" data-aos="zoom-in" data-aos-duration="1000" data-aos-delay="500">
+                    <img [src]="backendTech.icon" alt="Backend Technology icon" class="icon" />
                     <div>
                       <h3>{{ backendTech.name }}</h3>
                     </div>
@@ -132,18 +163,24 @@
               </div>
             </div>
           </div>
+        
           <img
             src="assets/icons/arrow.png"
             alt="Arrow icon"
             class="icon arrow"
+            data-aos="fade-up"
+            data-aos-duration="1200"
+            data-aos-delay="600"
             (click)="scrollTo('service')"
           />
-        </section>        
-
-        <section id="service" class="services-section">
-          <h2>Our Services</h2>
+        </section>
+              
+        
+        <section id="service" class="services-section" data-aos="fade-in" data-aos-duration="1000">
+          <h2 data-aos="fade-down" data-aos-duration="1200">Our Services</h2>
+        
           <div class="services-container">
-            <mat-card class="service-card" *ngFor="let service of services">
+            <mat-card class="service-card" *ngFor="let service of services" data-aos="zoom-in" data-aos-duration="1200" data-aos-delay="200">
               <img mat-card-image [src]="service.icon" alt="{{ service.title }} logo">
               <mat-card-header>
                 <mat-card-title>{{ service.title }}</mat-card-title>
@@ -153,15 +190,18 @@
               </mat-card-content>
             </mat-card>
           </div>
+        
           <img
             src="assets/icons/arrow.png"
             alt="Arrow icon"
             class="icon arrow"
+            data-aos="fade-up"
+            data-aos-duration="1000"
+            data-aos-delay="800"
             (click)="scrollTo('contact')"
           />
-        </section>     
+        </section>
         
-    
         
         <!-- <section id="contact_" class="contact-section" style="display:none;" @fadeIn>
           <h1 class="subtitle">Contact Me</h1>
@@ -187,73 +227,69 @@
           </div>
         </section> -->
        
-        <section id="contact">
-  
-          <h2>Contact</h2>
-          
+        <section id="contact" data-aos="fade-in" data-aos-duration="1000">
+          <h2 data-aos="fade-down" data-aos-duration="1200">Contact</h2>
+        
           <div class="contact-wrapper">
-          
-          <!-- Left contact page --> 
             
-            <form id="contact-form" class="form-horizontal" role="form">
-               
+            <!-- Contact Form Section -->
+            <form id="contact-form" class="form-horizontal" role="form" data-aos="fade-right" data-aos-duration="1500">
               <div class="form-group">
                 <div class="col-sm-12">
-                  <input type="text" class="form-control" id="name" placeholder="NAME" name="name" value="" required>
+                  <input type="text" class="form-control" id="name" placeholder="NAME" name="name" value="" required data-aos="zoom-in" data-aos-duration="1000" data-aos-delay="300">
                 </div>
               </div>
         
               <div class="form-group">
                 <div class="col-sm-12">
-                  <input type="email" class="form-control" id="email" placeholder="EMAIL" name="email" value="" required>
+                  <input type="email" class="form-control" id="email" placeholder="EMAIL" name="email" value="" required data-aos="zoom-in" data-aos-duration="1000" data-aos-delay="500">
                 </div>
               </div>
         
-              <textarea class="form-control" rows="10" placeholder="MESSAGE" name="message" required></textarea>
-              
-              <button class="btn btn-primary send-button" id="submit" type="submit" value="SEND">
-                SEND              
+              <textarea class="form-control" rows="10" placeholder="MESSAGE" name="message" required data-aos="zoom-in" data-aos-duration="1000" data-aos-delay="700"></textarea>
+        
+              <button class="btn btn-primary send-button" id="submit" type="submit" value="SEND" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="900">
+                SEND
               </button>
-              
             </form>
-            
-          <!-- Left contact page --> 
-            
-              <div class="direct-contact-container">
         
-                <ul class="contact-list">
-                  <li class="list-item"><i class="fa fa-map-marker fa-2x"></i> <span class="contact-text place" style="margin-left: 10px;">Chennai</span></li>
-                  
-                  <li class="list-item"><i class="fa fa-phone fa-2x"></i><span class="contact-text phone"><a href="tel:1-212-555-5555" title="Give me a call">(+91) 9360623548</a></span></li>
-                  
-                  <li class="list-item"><i class="fa fa-envelope fa-2x"></i><span class="contact-text gmail"><a href="mailto:#" title="Send me an email">mmarimuthu1997&#64;gmail.com</a></span></li>
-                  
-                </ul>
+            <!-- Contact Information Section -->
+            <div class="direct-contact-container" data-aos="fade-left" data-aos-duration="1500" data-aos-delay="500">
+              <ul class="contact-list">
+                <li class="list-item" data-aos="fade-right" data-aos-duration="1200" data-aos-delay="700">
+                  <i class="fa fa-map-marker fa-2x"></i> <span class="contact-text place" style="margin-left: 10px;">Chennai</span>
+                </li>
+                <li class="list-item" data-aos="fade-right" data-aos-duration="1200" data-aos-delay="900">
+                  <i class="fa fa-phone fa-2x"></i><span class="contact-text phone"><a href="tel:+91-9360623548" title="Give me a call">(+91) 9360623548</a></span>
+                </li>
+                <li class="list-item" data-aos="fade-right" data-aos-duration="1200" data-aos-delay="1100">
+                  <i class="fa fa-envelope fa-2x"></i><span class="contact-text gmail"><a href="mailto:mmarimuthu1997@gmail.com" title="Send me an email">mmarimuthu1997&#64;gmail.com</a></span>
+                </li>
+              </ul>
         
-                <hr>
-                <ul class="social-media-list">
-                  <li><a href="#" target="_blank" class="contact-icon">
-                    <i class="fa fa-github" aria-hidden="true"></i></a>
-                  </li>
-                  <li><a href="#" target="_blank" class="contact-icon">
-                    <i class="fa fa-twitter" aria-hidden="true"></i></a>
-                  </li>
-                  <li><a href="#" target="_blank" class="contact-icon">
-                    <i class="fa fa-instagram" aria-hidden="true"></i></a>
-                  </li>       
-                </ul>
-                <hr>
+              <hr data-aos="fade-left" data-aos-duration="1000" data-aos-delay="1300">
         
-                <div class="copyright">&copy; ALL OF THE RIGHTS RESERVED                  
-                </div>
-               
+              <!-- Social Media Links -->
+              <ul class="social-media-list" data-aos="fade-up" data-aos-duration="1200" data-aos-delay="1400">
+                <li><a href="#" target="_blank" class="contact-icon"><i class="fa fa-github" aria-hidden="true"></i></a></li>
+                <li><a href="#" target="_blank" class="contact-icon"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+                <li><a href="#" target="_blank" class="contact-icon"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>       
+              </ul>
+        
+              <hr data-aos="fade-left" data-aos-duration="1000" data-aos-delay="1600">
+        
+              <div class="copyright" data-aos="zoom-in" data-aos-duration="1000" data-aos-delay="1800">
+                &copy; ALL OF THE RIGHTS RESERVED
               </div>
-              
+            </div>
           </div>
-          <a href="javascript:void(0)" (click)="scrollToTop()" class="scroll-icon">
+        
+          <!-- Scroll to Top Arrow -->
+          <a href="javascript:void(0)" (click)="scrollToTop()" class="scroll-icon" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="2000">
             <i class="fa fa-arrow-up" aria-hidden="true"></i>
           </a>
-        </section>  
+        </section>
+          
                  
       </div>
 </div>
