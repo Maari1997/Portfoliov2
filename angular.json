@@ -32,25 +32,27 @@
             ],
             "scripts": [
               "node_modules/aos/dist/aos.js"
+            ],
+            "allowedCommonJsDependencies": [
+              "aos"
             ]
-            
           },
           "configurations": {
             "production": {
               "budgets": [
                 {
                   "type": "initial",
-                  "maximumWarning": "500kb",
+                  "maximumWarning": "800kb",
                   "maximumError": "1mb"
                 },
                 {
                   "type": "anyComponentStyle",
-                  "maximumWarning": "6kb",
-                  "maximumError": "8kb"
+                  "maximumWarning": "15kb",
+                  "maximumError": "20kb"
                 }
               ],
               "outputHashing": "all",
-              "baseHref": "/Portfolio/"
+              "baseHref": "/PortfolioV2/"
             },
             "development": {
               "optimization": false,
